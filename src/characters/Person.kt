@@ -1,4 +1,4 @@
-package Class
+package characters
 
 fun main() {
     val hero1 = Hero(name = "Артур", hp = 100)
