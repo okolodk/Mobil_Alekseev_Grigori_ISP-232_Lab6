@@ -1,8 +1,6 @@
 package characters
-
-
 import Class.Quest
-
+import  magic.Spell
 
 class Hero(
     val name: String,
@@ -111,5 +109,9 @@ class Hero(
 
         }
         return canAccept
+    }
+
+    fun canCast(spell: Spell): Boolean {
+        return (spell.name.length <= level * 2) && (spell.width <= 5 && spell.height <= 5)
     }
 }
