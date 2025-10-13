@@ -23,4 +23,10 @@ fun main() {
     println("Наруто может применить ${Spell1.name}? ${naruto.canCast(Spell1)}")
     println("Наруто может применить ${Spell2.name}? ${naruto.canCast(Spell2)}")
     println("Наруто может применить ${Spell3.name}? ${naruto.canCast(Spell3)}")
+    val enemy1 = Enemy("Волк", 100, "Ветер")
+    val enemy2 = Enemy("Голем", 300, "Земля")
+
+    println("${enemy1.name}, атака: ${enemy1.calculatePower()}")
+    println("${enemy2.name}, атака: ${enemy2.calculatePower()}")
+
 }

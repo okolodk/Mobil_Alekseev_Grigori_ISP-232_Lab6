@@ -4,7 +4,7 @@ class Enemy(
     val name: String,
     var hp: Int,
     val element: String,
-    val aggressionLevel: Int = 2
+    val  aggressionLevel: Int = 2
 ) {
     fun takeDamage(amount: Int) {
         hp -= amount
@@ -21,5 +21,9 @@ class Enemy(
             hp <= 150 -> "Средний"
             else -> "Высокий"
         }
+    }
+    fun calculatePower(): Int {
+        val power = hp * aggressionLevel
+        return power
     }
 }
