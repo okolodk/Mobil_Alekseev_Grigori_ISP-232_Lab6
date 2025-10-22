@@ -1,10 +1,10 @@
 package magic
 
-class Spell(    val name: String,
+class Spell(    name: String,
                 val width: Int,
                 val height: Int,
-                val symbol: String
-) {
+                symbol: String
+) : MagicEffect(name, symbol, 10)  {
     constructor(name: String, size: Int, symbol: String) : this(name, size, size, symbol)
 
     constructor() : this("", 0, 0, "")

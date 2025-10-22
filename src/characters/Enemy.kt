@@ -1,11 +1,11 @@
 package characters
 
-class Enemy(
-    val name: String,
-    var hp: Int,
-    val element: String,
+open class Enemy(
+    name: String,
+    hp: Int = 0,
+    element: String = "Неизвестный",
     val  aggressionLevel: Int = 2
-) {
+) : GameCharacter(name, hp, element) {
     fun takeDamage(amount: Int) {
         hp -= amount
         if (hp < 0) hp = 0

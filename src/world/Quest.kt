@@ -1,11 +1,11 @@
-package Class
+package world
 
 class Quest(
-    val title: String,
+    title : String,
     val duration: Int,
-    val reward: Int,
+    reward : Int,
     val difficulty: String
-) {
+) : Mission(title, reward){
     fun printInfo() {
         println("Название квеста: $title")
         println("Время выполнения: $duration часов")
@@ -18,7 +18,11 @@ class Quest(
     }
 
     fun goldPerHour(): Int {
-        if (duration == 0) { return 0}
-        return reward / duration
+        require(duration >= 0) {"Длительность не может быть отрецательной!"}
+        return if (duration== 0) 0 else reward / duration
+    }
+
+    override fun describe() {
+        println("Квест '$title' на $duration часов, сложность: $difficulty, награда: $reward золотых")
     }
 }

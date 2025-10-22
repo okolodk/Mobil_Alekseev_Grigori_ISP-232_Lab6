@@ -1,15 +1,17 @@
 package characters
-import Class.Quest
+import world.Quest
 import  magic.Spell
 
 class Hero(
-    val name: String,
-    var hp: Int,
-    val gender: String = "Мужской",
-    val role: String = "Воин",
-    var mp: Int = 50,
-    var level: Int = 1,
-    val element: String = "Огонь")
+    name: String,
+    hp: Int = 0,
+    val gender: String = "Неизвестный",
+    val role: String = "Неизвестный",
+    var mp: Int = 0,
+    var level: Int = 0,
+    element: String = "Неизвестный",
+    val experience: Int = 0
+    ) : GameCharacter(name, hp, element)
 {
     fun introduce() {
         println("Привет! Я $name, герой $level уровня со стихией $element.")
