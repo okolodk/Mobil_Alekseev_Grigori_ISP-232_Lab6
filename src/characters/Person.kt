@@ -1,6 +1,18 @@
 package characters
-import  magic.Spell
+import  world.Quest
+import  world.QuestType
 fun main() {
+    val trader = Trader("Ральф")
+
+    trader.addQuest(Quest(title = "Собрать травы", duration = 2,
+        reward = 50, difficulty = "Лёгкий", QuestType.DELIVERY))
+    trader.addQuest(Quest(title = "Убить волков", duration = 3,
+        reward = 100, difficulty = "Средний", QuestType.ELIMINATION))
+
+    trader.showAvailableQuests()
+
+    val selectedQuest = trader.giveQuest(index = 1)
+    selectedQuest.describe()
 // Тестируем NPC
     val blacksmith = NPC(name = "Кузнец Ульфрик", hasQuest = true)
     println(blacksmith.giveQuest())

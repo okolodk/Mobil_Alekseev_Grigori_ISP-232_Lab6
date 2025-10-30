@@ -2,7 +2,7 @@ package world
 
 fun main() {
     val quest = Quest(title = "Поиск артефакта", duration = 3, reward = 800,
-        difficulty = "Средний")
+        difficulty = "Средний", QuestType.ESCORT)
 
     val contract = Contract(title = "Защита каравана",
         clientName = "Гильдия купцов",
@@ -21,7 +21,7 @@ fun main() {
     println("Название: ${specialOp.title}")
     specialOp.showReward()
     val missions = listOf<Mission>(
-        Quest(title = "Охота на монстров", duration = 3, reward = 600, difficulty = "Средний"),
+        Quest(title = "Охота на монстров", duration = 3, reward = 600, difficulty = "Средний", QuestType.ESCORT),
         SpecialOperation(title = "Ночной рейд", reward = 1500, requiredClearance = 2,
             isCovert = true),
         Contract(title = "Сопровождение каравана", clientName = "Гильдия Торговцев",
